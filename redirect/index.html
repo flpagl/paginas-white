@@ -1,197 +1,242 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scania | Caminhões Elétricos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Porsche 911 Turbo S | Miniatura 1:18</title>
   <style>
     :root {
-      --preto: #111;
+      --preto: #000;
       --branco: #fff;
-      --azul: #0074D9;
-      --cinza-claro: #f4f4f4;
-      --cinza-escuro: #333;
-      --amarelo: #FFD700;
+      --vermelho: #d90429;
+      --cinza-claro: #f2f2f2;
+      --cinza-escuro: #2b2b2b;
+      --dourado: #e5c100;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--branco);
       color: var(--cinza-escuro);
-      line-height: 1.6;
     }
+
     header {
-      background: var(--azul);
+      background: var(--vermelho);
       color: var(--branco);
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
+
     .container {
-      max-width: 900px;
-      margin: 20px auto;
+      max-width: 1000px;
+      margin: 30px auto;
       padding: 20px;
     }
-    .imagem-produto {
+
+    .produto-imagem {
       width: 100%;
-      max-width: 700px;
+      max-width: 800px;
       display: block;
-      margin: 0 auto 20px;
-      border-radius: 8px;
+      margin: 0 auto 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
     }
-    .formulario {
+
+    .detalhes-produto {
       background: var(--cinza-claro);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 35px;
     }
-    .formulario h2 {
-      color: var(--azul);
+
+    .detalhes-produto h2 {
+      color: var(--vermelho);
       margin-bottom: 15px;
     }
+
+    .descricao {
+      margin-bottom: 20px;
+    }
+
+    .descricao p {
+      margin-bottom: 10px;
+    }
+
+    .formulario {
+      background: var(--cinza-claro);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 35px;
+    }
+
+    .formulario h3 {
+      color: var(--vermelho);
+      margin-bottom: 15px;
+    }
+
     .form-group {
       margin-bottom: 15px;
     }
+
     .form-group label {
       display: block;
       margin-bottom: 5px;
     }
+
     .form-group input {
       width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 6px;
     }
+
     button {
-      background: var(--azul);
+      background: var(--vermelho);
       color: var(--branco);
-      padding: 15px 25px;
+      padding: 12px 20px;
       border: none;
       border-radius: 6px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
-      opacity: 0.6;
+      opacity: 0.5;
       pointer-events: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
     }
+
     button.ativo {
       opacity: 1;
       pointer-events: auto;
-      animation: pulse 2s infinite;
+      animation: glow 2s infinite;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 10px var(--vermelho); }
+      50% { box-shadow: 0 0 20px var(--vermelho); }
     }
-    .politicas, .avaliacoes {
+
+    .reviews, .info-extra {
       background: var(--cinza-claro);
       padding: 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-bottom: 30px;
     }
-    .politicas h3, .avaliacoes h2 {
-      color: var(--azul);
-      margin-bottom: 10px;
+
+    .reviews h3, .info-extra h3 {
+      color: var(--vermelho);
+      margin-bottom: 15px;
     }
-    .avaliacao {
-      border-bottom: 1px solid #ccc;
+
+    .review {
+      border-top: 1px solid #ddd;
       padding: 10px 0;
     }
-    .avaliacao .estrelas {
-      color: var(--amarelo);
+
+    .review:first-child {
+      border-top: none;
     }
+
+    .review .estrelas {
+      color: var(--dourado);
+    }
+
     footer {
-      background: #f9f9f9;
+      background: #eee;
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
       color: var(--cinza-escuro);
     }
+
     footer a {
-      color: var(--azul);
-      text-decoration: none;
+      color: var(--vermelho);
       margin: 0 10px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Scania Caminhões Elétricos</h1>
+  <h1>Porsche 911 Turbo S</h1>
+  <p>Miniatura de luxo em escala 1:18</p>
 </header>
 
 <div class="container">
-  <img class="imagem-produto" src="images/a.webp" alt="Caminhão Elétrico Azul da Scania">
+  <img class="produto-imagem" src="images/porsche.webp" alt="Miniatura Porsche 911 Turbo S escala 1:18" />
+
+  <div class="detalhes-produto">
+    <h2>Detalhes do Produto</h2>
+    <div class="descricao">
+      <p><strong>Material:</strong> Liga de metal fundido (die-cast), plástico ABS e borracha de alta qualidade.</p>
+      <p><strong>Tamanho:</strong> Escala 1/18 – aproximadamente 25 cm de comprimento.</p>
+      <p><strong>Destaques:</strong> Acabamento premium, portas e capô que abrem, rodas móveis, pintura automotiva realista.</p>
+    </div>
+  </div>
 
   <div class="formulario">
-    <h2>Solicite uma cotação personalizada!</h2>
+    <h3>Garanta já a sua miniatura!</h3>
     <div class="form-group">
       <label>Nome completo</label>
-      <input type="text" placeholder="Digite seu nome">
+      <input type="text" placeholder="Ex: Carlos Andrade" />
     </div>
     <div class="form-group">
-      <label>WhatsApp ou e-mail</label>
-      <input type="text" placeholder="Digite seu contato">
+      <label>Contato (WhatsApp ou e-mail)</label>
+      <input type="text" placeholder="Ex: (11) 99999-9999 ou seu@email.com" />
     </div>
     <div class="form-group">
-      <label>Empresa ou endereço</label>
-      <input type="text" placeholder="Nome da empresa, cidade, estado">
+      <label>Endereço ou cidade</label>
+      <input type="text" placeholder="Ex: São Paulo - SP" />
     </div>
-    <button id="botaoEnviar">Solicitar Cotação</button>
+    <button id="btnOrcamento">Solicitar Cotação</button>
   </div>
 
-  <div class="politicas">
-    <h3>Sobre a Scania</h3>
-    <p><strong>Empresa:</strong> Scania Latin America Ltda</p>
-    <p><strong>CNPJ:</strong> 59.104.760/0001-78</p>
-
-    <h3>Entrega</h3>
-    <p>Prazo de entrega sob consulta. Nossos representantes entrarão em contato após a solicitação.</p>
-
-    <h3>Garantia</h3>
-    <p>Oferecemos garantia estendida de fábrica para veículos elétricos. Suporte técnico completo em todo o Brasil.</p>
-
-    <h3>Privacidade</h3>
-    <p>Respeitamos a sua privacidade e garantimos a segurança dos seus dados em nosso sistema.</p>
+  <div class="info-extra">
+    <h3>Informações Importantes</h3>
+    <p><strong>Fornecedor:</strong> GT Models Brasil</p>
+    <p><strong>Envio:</strong> Postagem em até 2 dias úteis após confirmação.</p>
+    <p><strong>Garantia:</strong> 90 dias contra defeitos de fabricação.</p>
+    <p><strong>Privacidade:</strong> Seus dados são protegidos conforme a LGPD.</p>
   </div>
 
-  <div class="avaliacoes">
-    <h2>O que dizem nossos clientes</h2>
+  <div class="reviews">
+    <h3>Clientes satisfeitos</h3>
 
-    <div class="avaliacao">
+    <div class="review">
       <div class="estrelas">★★★★★</div>
-      <p>Redução incrível nos custos de combustível e manutenção. Excelente investimento!</p>
-      <strong>Transportadora Rápido Sul</strong>
+      <p>Miniatura com acabamento impecável. Presente perfeito para quem ama carros!</p>
+      <strong>Lucas G. – Campinas</strong>
     </div>
 
-    <div class="avaliacao">
+    <div class="review">
       <div class="estrelas">★★★★★</div>
-      <p>O caminhão é silencioso e potente. Nosso motorista ficou impressionado.</p>
-      <strong>João M., Logística Verde</strong>
+      <p>Entrega super rápida e produto de alta qualidade. Vale cada centavo.</p>
+      <strong>Ana P. – Fortaleza</strong>
     </div>
 
-    <div class="avaliacao">
+    <div class="review">
       <div class="estrelas">★★★★☆</div>
-      <p>Ótima performance nas rotas urbanas. A autonomia está dentro do esperado.</p>
-      <strong>Eco Cargas</strong>
+      <p>A pintura é realista e as portas se abrem perfeitamente. Só faltou vir com base expositora.</p>
+      <strong>Eduardo M. – Porto Alegre</strong>
     </div>
   </div>
-
 </div>
 
 <footer>
-  <p>&copy; 2025 Scania Latin America. Todos os direitos reservados.</p>
-  <p><a href="#">Política de Privacidade</a> | <a href="#">Cookies</a> | <a href="#">Termos</a></p>
+  <p>&copy; 2025 GT Models Brasil. Todos os direitos reservados.</p>
+  <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
 </footer>
 
 <script>
   window.addEventListener('load', () => {
     setTimeout(() => {
-      document.getElementById('botaoEnviar').classList.add('ativo');
-    }, 5000);
+      document.getElementById('btnOrcamento').classList.add('ativo');
+    }, 4000);
   });
 </script>
 
