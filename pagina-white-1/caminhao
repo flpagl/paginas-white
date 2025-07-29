@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scania | Caminhões Elétricos</title>
+  <style>
+    :root {
+      --preto: #111;
+      --branco: #fff;
+      --azul: #0074D9;
+      --cinza-claro: #f4f4f4;
+      --cinza-escuro: #333;
+      --amarelo: #FFD700;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--branco);
+      color: var(--cinza-escuro);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .imagem-produto {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 8px;
+    }
+    .formulario {
+      background: var(--cinza-claro);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .formulario h2 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 15px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0.6;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+    button.ativo {
+      opacity: 1;
+      pointer-events: auto;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .politicas, .avaliacoes {
+      background: var(--cinza-claro);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .politicas h3, .avaliacoes h2 {
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+    .avaliacao {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .avaliacao .estrelas {
+      color: var(--amarelo);
+    }
+    footer {
+      background: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: var(--cinza-escuro);
+    }
+    footer a {
+      color: var(--azul);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Scania Caminhões Elétricos</h1>
+</header>
+
+<div class="container">
+  <img class="imagem-produto" src="https://cdn.pixabay.com/photo/2021/12/03/14/45/electric-truck-6844351_1280.jpg" alt="Caminhão Elétrico Azul da Scania">
+
+  <div class="formulario">
+    <h2>Solicite uma cotação personalizada!</h2>
+    <div class="form-group">
+      <label>Nome completo</label>
+      <input type="text" placeholder="Digite seu nome">
+    </div>
+    <div class="form-group">
+      <label>WhatsApp ou e-mail</label>
+      <input type="text" placeholder="Digite seu contato">
+    </div>
+    <div class="form-group">
+      <label>Empresa ou endereço</label>
+      <input type="text" placeholder="Nome da empresa, cidade, estado">
+    </div>
+    <button id="botaoEnviar">Solicitar Cotação</button>
+  </div>
+
+  <div class="politicas">
+    <h3>Sobre a Scania</h3>
+    <p><strong>Empresa:</strong> Scania Latin America Ltda</p>
+    <p><strong>CNPJ:</strong> 59.104.760/0001-78</p>
+
+    <h3>Entrega</h3>
+    <p>Prazo de entrega sob consulta. Nossos representantes entrarão em contato após a solicitação.</p>
+
+    <h3>Garantia</h3>
+    <p>Oferecemos garantia estendida de fábrica para veículos elétricos. Suporte técnico completo em todo o Brasil.</p>
+
+    <h3>Privacidade</h3>
+    <p>Respeitamos a sua privacidade e garantimos a segurança dos seus dados em nosso sistema.</p>
+  </div>
+
+  <div class="avaliacoes">
+    <h2>O que dizem nossos clientes</h2>
+
+    <div class="avaliacao">
+      <div class="estrelas">★★★★★</div>
+      <p>Redução incrível nos custos de combustível e manutenção. Excelente investimento!</p>
+      <strong>Transportadora Rápido Sul</strong>
+    </div>
+
+    <div class="avaliacao">
+      <div class="estrelas">★★★★★</div>
+      <p>O caminhão é silencioso e potente. Nosso motorista ficou impressionado.</p>
+      <strong>João M., Logística Verde</strong>
+    </div>
+
+    <div class="avaliacao">
+      <div class="estrelas">★★★★☆</div>
+      <p>Ótima performance nas rotas urbanas. A autonomia está dentro do esperado.</p>
+      <strong>Eco Cargas</strong>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Scania Latin America. Todos os direitos reservados.</p>
+  <p><a href="#">Política de Privacidade</a> | <a href="#">Cookies</a> | <a href="#">Termos</a></p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('botaoEnviar').classList.add('ativo');
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>
