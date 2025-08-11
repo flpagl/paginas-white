@@ -2,243 +2,46 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Porsche 911 Turbo S | Miniatura 1:18</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verificando oferta...</title>
+  <meta name="robots" content="noindex">
   <style>
-    :root {
-      --preto: #000;
-      --branco: #fff;
-      --vermelho: #d90429;
-      --cinza-claro: #f2f2f2;
-      --cinza-escuro: #2b2b2b;
-      --dourado: #e5c100;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--branco);
-      color: var(--cinza-escuro);
-    }
-
-    header {
-      background: var(--vermelho);
-      color: var(--branco);
-      padding: 30px 20px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
       text-align: center;
+      padding-top: 100px;
     }
 
-    .container {
-      max-width: 1000px;
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #25D366;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
       margin: 30px auto;
-      padding: 20px;
+      animation: spin 1s linear infinite;
     }
 
-    .produto-imagem {
-      width: 100%;
-      max-width: 800px;
-      display: block;
-      margin: 0 auto 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
-    .detalhes-produto {
-      background: var(--cinza-claro);
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 35px;
-    }
-
-    .detalhes-produto h2 {
-      color: var(--vermelho);
-      margin-bottom: 15px;
-    }
-
-    .descricao {
-      margin-bottom: 20px;
-    }
-
-    .descricao p {
-      margin-bottom: 10px;
-    }
-
-    .formulario {
-      background: var(--cinza-claro);
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 35px;
-    }
-
-    .formulario h3 {
-      color: var(--vermelho);
-      margin-bottom: 15px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    button {
-      background: var(--vermelho);
-      color: var(--branco);
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      opacity: 0.5;
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
-
-    button.ativo {
-      opacity: 1;
-      pointer-events: auto;
-      animation: glow 2s infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 10px var(--vermelho); }
-      50% { box-shadow: 0 0 20px var(--vermelho); }
-    }
-
-    .reviews, .info-extra {
-      background: var(--cinza-claro);
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-
-    .reviews h3, .info-extra h3 {
-      color: var(--vermelho);
-      margin-bottom: 15px;
-    }
-
-    .review {
-      border-top: 1px solid #ddd;
-      padding: 10px 0;
-    }
-
-    .review:first-child {
-      border-top: none;
-    }
-
-    .review .estrelas {
-      color: var(--dourado);
-    }
-
-    footer {
-      background: #eee;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: var(--cinza-escuro);
-    }
-
-    footer a {
-      color: var(--vermelho);
-      margin: 0 10px;
-      text-decoration: none;
+    p {
+      font-size: 18px;
     }
   </style>
+  <script>
+    setTimeout(function() {
+      window.location.href = "https://superatacadopro.myshopify.com/products/trator-rc"; // <-- Substitua pela URL real
+    }, 4000); // redireciona após 4 segundos
+  </script>
 </head>
 <body>
-
-<header>
-  <h1>Porsche 911 Turbo S</h1>
-  <p>Miniatura de luxo em escala 1:18</p>
-</header>
-
-<div class="container">
-  <img class="produto-imagem" src="./porshe.png" alt="Miniatura Porsche 911 Turbo S escala 1:18" />
-
-  <div class="detalhes-produto">
-    <h2>Detalhes do Produto</h2>
-    <div class="descricao">
-      <p><strong>Material:</strong> Liga de metal fundido (die-cast), plástico ABS e borracha de alta qualidade.</p>
-      <p><strong>Tamanho:</strong> Escala 1/18 – aproximadamente 25 cm de comprimento.</p>
-      <p><strong>Destaques:</strong> Acabamento premium, portas e capô que abrem, rodas móveis, pintura automotiva realista.</p>
-    </div>
-  </div>
-
-  <div class="formulario">
-    <h3>Garanta já a sua miniatura!</h3>
-    <div class="form-group">
-      <label>Nome completo</label>
-      <input type="text" placeholder="Ex: Carlos Andrade" />
-    </div>
-    <div class="form-group">
-      <label>Contato (WhatsApp ou e-mail)</label>
-      <input type="text" placeholder="Ex: (11) 99449-9995 ou porshe911@suporte.com" />
-    </div>
-    <div class="form-group">
-      <label>Endereço ou cidade</label>
-      <input type="text" placeholder="Ex: São Paulo - SP" />
-    </div>
-    <button id="btnOrcamento">Solicitar Cotação</button>
-  </div>
-
-  <div class="info-extra">
-    <h3>Informações Importantes</h3>
-    <p><strong>Fornecedor:</strong> GT Models Brasil</p>
-    <p><strong>Envio:</strong> Postagem em até 2 dias úteis após confirmação.</p>
-    <p><strong>Garantia:</strong> 90 dias contra defeitos de fabricação.</p>
-    <p><strong>Privacidade:</strong> Seus dados são protegidos conforme a LGPD.</p>
-  </div>
-
-  <div class="reviews">
-    <h3>Clientes satisfeitos</h3>
-
-    <div class="review">
-      <div class="estrelas">★★★★★</div>
-      <p>Miniatura com acabamento impecável. Presente perfeito para quem ama carros!</p>
-      <strong>Lucas G. – Campinas</strong>
-    </div>
-
-    <div class="review">
-      <div class="estrelas">★★★★★</div>
-      <p>Entrega super rápida e produto de alta qualidade. Vale cada centavo.</p>
-      <strong>Ana P. – Fortaleza</strong>
-    </div>
-
-    <div class="review">
-      <div class="estrelas">★★★★☆</div>
-      <p>A pintura é realista e as portas se abrem perfeitamente. Só faltou vir com base expositora.</p>
-      <strong>Eduardo M. – Porto Alegre</strong>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <p>&copy; 2025 GT Models Brasil. Todos os direitos reservados.</p>
-  <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
-</footer>
-
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('btnOrcamento').classList.add('ativo');
-    }, 4000);
-  });
-</script>
-
+  <h1>Carregando oferta exclusiva...</h1>
+  <div class="loader"></div>
+  <p>Aguarde um momento. Estamos preparando a página para você.</p>
 </body>
 </html>
