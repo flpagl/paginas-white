@@ -1,199 +1,231 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scania | Caminhões Elétricos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ganhe seu desconto exclusivo</title>
+  <meta name="description" content="Clique para revelar um cupom de desconto válido em lojas parceiras selecionadas. Página segura e transparente."/>
   <style>
-    :root {
-      --preto: #111;
-      --branco: #fff;
-      --azul: #0074D9;
-      --cinza-claro: #f4f4f4;
-      --cinza-escuro: #333;
-      --amarelo: #FFD700;
+    :root{
+      --bg:#0f1724; /* fundo escuro para contraste */
+      --card:#0b1220;
+      --accent:#ff8a00;
+      --muted:#93a3b8;
+      --white:#ffffff;
+      --maxW:520px;
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#071028 80%);
+      color:var(--white);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
     }
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--branco);
-      color: var(--cinza-escuro);
-      line-height: 1.6;
+    .wrap{
+      width:100%;
+      max-width:var(--maxW);
+      background:linear-gradient(180deg,#071428 0%, #0b1220 100%);
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      padding:22px;
+      text-align:center;
     }
-    header {
-      background: var(--azul);
-      color: var(--branco);
-      padding: 20px;
-      text-align: center;
+    header h1{margin:6px 0 8px;font-size:20px}
+    header p{margin:0;color:var(--muted);font-size:13px}
+    .hero{
+      margin:18px auto 6px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:14px;
     }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
+    .product-thumb{
+      width:100%;
+      max-height:220px;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+      margin:auto;
     }
-    .imagem-produto {
-      width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 0 auto 20px;
-      border-radius: 8px;
+    .pitch{margin-top:12px;font-size:15px;color:#dbe7ff}
+    .reveal-card{
+      margin-top:18px;
+      background:linear-gradient(180deg,#0f263a,#092032);
+      border-radius:10px;
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.04);
     }
-    .formulario {
-      background: var(--cinza-claro);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
+    .reveal-instruction{color:var(--muted);font-size:13px;margin-bottom:10px}
+    .reveal-btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#071428;
+      padding:14px 22px;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+      font-size:16px;
+      border:none;
+      cursor:pointer;
+      transition:transform .12s ease,opacity .12s;
     }
-    .formulario h2 {
-      color: var(--azul);
-      margin-bottom: 15px;
+    .reveal-btn:active{transform:scale(.98)}
+    .coupon{
+      margin-top:14px;
+      background:rgba(255,255,255,0.04);
+      padding:12px;
+      border-radius:8px;
+      font-weight:800;
+      letter-spacing:1px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
     }
-    .form-group {
-      margin-bottom: 15px;
+    .code{font-size:18px;color:var(--accent)}
+    .copy-btn{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);
+      color:var(--white);padding:8px 10px;border-radius:8px;cursor:pointer;font-size:13px;
     }
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background: var(--azul);
-      color: var(--branco);
-      padding: 15px 25px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      opacity: 0.6;
-      pointer-events: none;
-      transition: 0.3s;
-    }
-    button.ativo {
-      opacity: 1;
-      pointer-events: auto;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-    .politicas, .avaliacoes {
-      background: var(--cinza-claro);
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-    .politicas h3, .avaliacoes h2 {
-      color: var(--azul);
-      margin-bottom: 10px;
-    }
-    .avaliacao {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-    .avaliacao .estrelas {
-      color: var(--amarelo);
-    }
-    footer {
-      background: #f9f9f9;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: var(--cinza-escuro);
-    }
-    footer a {
-      color: var(--azul);
-      text-decoration: none;
-      margin: 0 10px;
+    .actions{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .link-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);padding:10px 12px;border-radius:10px;text-decoration:none;font-size:14px}
+    .terms{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.4;text-align:left}
+    footer{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:13px;text-align:left}
+    footer a{color:var(--muted);text-decoration:underline}
+    /* mobile-friendly */
+    @media (max-width:520px){
+      .wrap{padding:16px;border-radius:12px}
+      .coupon{flex-direction:column;align-items:flex-start}
+      .code{font-size:16px}
     }
   </style>
 </head>
 <body>
+  <main class="wrap" role="main">
+    <header>
+      <h1>Ganhe um desconto exclusivo</h1>
+      <p>Descontos válidos em sites confiáveis — condições e parceiros no final da página.</p>
+    </header>
 
-<header>
-  <h1>Scania Caminhões Elétricos</h1>
-</header>
-
-<div class="container">
-  <img class="imagem-produto" src="https://cdn.pixabay.com/photo/2021/12/03/14/45/electric-truck-6844351_1280.jpg" alt="Caminhão Elétrico Azul da Scania">
-
-  <div class="formulario">
-    <h2>Solicite uma cotação personalizada!</h2>
-    <div class="form-group">
-      <label>Nome completo</label>
-      <input type="text" placeholder="Digite seu nome">
-    </div>
-    <div class="form-group">
-      <label>WhatsApp ou e-mail</label>
-      <input type="text" placeholder="Digite seu contato">
-    </div>
-    <div class="form-group">
-      <label>Empresa ou endereço</label>
-      <input type="text" placeholder="Nome da empresa, cidade, estado">
-    </div>
-    <button id="botaoEnviar">Solicitar Cotação</button>
-  </div>
-
-  <div class="politicas">
-    <h3>Sobre a Scania</h3>
-    <p><strong>Empresa:</strong> Scania Latin America Ltda</p>
-    <p><strong>CNPJ:</strong> 59.104.760/0001-78</p>
-
-    <h3>Entrega</h3>
-    <p>Prazo de entrega sob consulta. Nossos representantes entrarão em contato após a solicitação.</p>
-
-    <h3>Garantia</h3>
-    <p>Oferecemos garantia estendida de fábrica para veículos elétricos. Suporte técnico completo em todo o Brasil.</p>
-
-    <h3>Privacidade</h3>
-    <p>Respeitamos a sua privacidade e garantimos a segurança dos seus dados em nosso sistema.</p>
-  </div>
-
-  <div class="avaliacoes">
-    <h2>O que dizem nossos clientes</h2>
-
-    <div class="avaliacao">
-      <div class="estrelas">★★★★★</div>
-      <p>Redução incrível nos custos de combustível e manutenção. Excelente investimento!</p>
-      <strong>Transportadora Rápido Sul</strong>
+    <div class="hero" aria-hidden="false">
+      <!-- troque a src pela imagem do produto/promocional -->
+      <img class="product-thumb" src="https://via.placeholder.com/800x450?text=Descontos+Exclusivos" alt="Descontos exclusivos em marketplaces" />
+      <p class="pitch">Clique abaixo para <strong>revelar seu cupom</strong>. Cupom garantido — sem sorte, sem jogos.</p>
     </div>
 
-    <div class="avaliacao">
-      <div class="estrelas">★★★★★</div>
-      <p>O caminhão é silencioso e potente. Nosso motorista ficou impressionado.</p>
-      <strong>João M., Logística Verde</strong>
-    </div>
+    <section class="reveal-card" aria-labelledby="revealTitle">
+      <div id="revealTitle" class="reveal-instruction">Toque no botão para revelar seu cupom</div>
 
-    <div class="avaliacao">
-      <div class="estrelas">★★★★☆</div>
-      <p>Ótima performance nas rotas urbanas. A autonomia está dentro do esperado.</p>
-      <strong>Eco Cargas</strong>
-    </div>
-  </div>
+      <button id="revealBtn" class="reveal-btn" aria-pressed="false" aria-label="Revelar meu cupom">Revelar meu cupom</button>
 
-</div>
+      <!-- área que mostra o cupom após clique -->
+      <div id="couponArea" style="display:none;">
+        <div class="coupon" role="status" aria-live="polite">
+          <div>
+            <div style="font-size:12px;color:var(--muted)">SEU CÓDIGO</div>
+            <div class="code" id="couponCode">JALAPAO10</div>
+          </div>
+          <div style="text-align:right">
+            <button class="copy-btn" id="copyBtn">Copiar</button>
+          </div>
+        </div>
 
-<footer>
-  <p>&copy; 2025 Scania Latin America. Todos os direitos reservados.</p>
-  <p><a href="#">Política de Privacidade</a> | <a href="#">Cookies</a> | <a href="#">Termos</a></p>
-</footer>
+        <div class="actions">
+          <!-- links para lojas confiáveis; NÃO afirmar parceria sem autorização -->
+          <a class="link-btn" href="https://www.mercadolivre.com.br" target="_blank" rel="noopener noreferrer">Usar no MercadoLivre</a>
+          <a class="link-btn" href="https://www.shopee.com.br" target="_blank" rel="noopener noreferrer">Usar na Shopee</a>
+          <a class="link-btn" href="https://www.amazon.com.br" target="_blank" rel="noopener noreferrer">Usar na Amazon</a>
+        </div>
+      </div>
 
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('botaoEnviar').classList.add('ativo');
-    }, 5000);
-  });
-</script>
+      <div id="alreadySeen" style="display:none;margin-top:10px;color:var(--muted);font-size:13px">
+        Cupom já revelado — verifique sua cópia ou use os links acima.
+      </div>
 
+      <div class="terms" id="termsBlock">
+        <strong>Termos rápidos:</strong>
+        <ul style="margin:8px 0 0 16px;padding:0;color:var(--muted)">
+          <li>O cupom mostrado é um <em>desconto garantido</em> gerado pela nossa loja e pode ter validade limitada.</li>
+          <li>Lista de lojas é meramente informativa — <strong>não somos afiliados oficiais</strong> ao MercadoLivre, Shopee ou Amazon, salvo quando indicado.</li>
+          <li>Não solicitamos dados sensíveis para revelar o cupom.</li>
+          <li>Consulte condições completas no rodapé antes de usar.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div><strong>Loja Exemplo LTDA</strong></div>
+      <div>CNPJ: 00.000.000/0000-00 • Email: contato@exemplo.com • Tel: (00) 00000-0000</div>
+      <div style="margin-top:8px;color:var(--muted)">Endereço, política de privacidade e condições de uso devem estar disponíveis na página completa. Ao anunciar no TikTok, mantenha transparência sobre a origem dos cupons e as regras da promoção.</div>
+      <div style="margin-top:8px"><a href="#" onclick="alert('Mostrar política de privacidade (substitua pelo link real).');return false">Política de Privacidade</a> • <a href="#" onclick="alert('Mostrar termos (substitua pelo link real).');return false">Termos e Condições</a></div>
+    </footer>
+  </main>
+
+  <script>
+    // comportamento simples e seguro: clique revela um cupom fixo/garantido (não jogo)
+    (function(){
+      const revealBtn = document.getElementById('revealBtn');
+      const couponArea = document.getElementById('couponArea');
+      const alreadySeen = document.getElementById('alreadySeen');
+      const couponCodeEl = document.getElementById('couponCode');
+      const copyBtn = document.getElementById('copyBtn');
+
+      // opcional: gerar códigos diferentes por visitante (simples)
+      function generateCode(){
+        // Exemplo: prefix + 6 alfanuméricos
+        const prefix = 'DESCONTO';
+        const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+        let s = '';
+        for(let i=0;i<6;i++) s += chars[Math.floor(Math.random()*chars.length)];
+        return prefix + '-' + s;
+      }
+
+      revealBtn.addEventListener('click', function(){
+        // se já revelou
+        if(sessionStorage.getItem('couponRevealed')){
+          couponArea.style.display = 'block';
+          alreadySeen.style.display = 'block';
+          revealBtn.setAttribute('aria-pressed','true');
+          return;
+        }
+
+        // gerar cupom único/garantido (ou use cupom fixo)
+        const code = generateCode(); // ou 'JALAPAO10'
+        couponCodeEl.textContent = code;
+        couponArea.style.display = 'block';
+        revealBtn.setAttribute('aria-pressed','true');
+        sessionStorage.setItem('couponRevealed', '1');
+        sessionStorage.setItem('couponCode', code);
+      });
+
+      // ao carregar, se já tiver cupom na sessão exibir
+      window.addEventListener('load', function(){
+        const revealed = sessionStorage.getItem('couponRevealed');
+        if(revealed){
+          const saved = sessionStorage.getItem('couponCode') || 'DESCONTO-XXXXXX';
+          couponCodeEl.textContent = saved;
+          couponArea.style.display = 'block';
+        }
+      });
+
+      // copiar para clipboard
+      copyBtn.addEventListener('click', function(){
+        const code = couponCodeEl.textContent.trim();
+        if(!code) return;
+        navigator.clipboard.writeText(code).then(function(){
+          copyBtn.textContent = 'Copiado!';
+          setTimeout(()=> copyBtn.textContent = 'Copiar',1500);
+        }).catch(()=> {
+          alert('Não foi possível copiar automaticamente. Selecione e copie manualmente: ' + code);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
